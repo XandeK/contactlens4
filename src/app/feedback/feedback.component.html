@@ -1,1 +1,24 @@
-<p>feedback works!</p>
+<br>
+<div class="container-fluid">
+  <h1><b>Feedback</b></h1>
+  <h2>Pending Approval</h2>
+</div>
+<br>
+<br>
+<ul class="list-group text-center listFeedbackul" *ngFor="let reviewLists of reviewList; let i = index">
+  <li class="list-group-item text-left listFeedback">
+    <div class="row" data-toggle="collapse" [attr.data-target]="'#demo' + i">
+      <div class="col-3">
+        {{reviewLists.reviewInfo.Name}}
+        <br>
+        Ratings: {{reviewLists.reviewInfo.Rating}}/5 stars
+      </div>
+      <div class="col-3">{{reviewLists.reviewInfo.ProductName}}</div>
+      <div class="col-3">{{reviewLists.reviewInfo.Description}}</div>
+      <div class="col-3 text-right">
+        <button type="button" class="btn btn-primary aprvBtn">Approve</button>
+        <button type="button" class="btn btn-primary delBtn">Delete</button>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-feedback',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor() { }
-
+  reviewList: any = [];
+  constructor(private CategoryService: CategoryService) {
+    this.CategoryService.getAllReviews().subscribe(data => {
+      this.reviewList = data;
+      console.log(this.reviewList);
+    });
+  }
   ngOnInit() {
   }
 

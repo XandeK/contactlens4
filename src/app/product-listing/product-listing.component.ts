@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-product-listing',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListingComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService) { }
+  result: any = [];
+  catName: any = [];
   ngOnInit() {
+    const categoryName = this.route.snapshot.params.categoryName;
+    this.catName =  this.route.snapshot.params.categoryName;
+    this.categoryService.getCategoryProduct(categoryName).subscribe(data => {
+      this.result = data;
+    });
   }
 
 }

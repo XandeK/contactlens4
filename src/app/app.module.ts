@@ -9,8 +9,10 @@ import { OrderRecordsComponent } from './order-records/order-records.component';
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { ProductCategoryComponent } from './product-category/product-category.component'
 
-import {routing} from './app.routing'
+import {routing} from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import {routing} from './app.routing'
     OrderRecordsComponent,
     ProductListingComponent,
     BlogPageComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    ProductCategoryComponent
   ],
   imports: [
     routing,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
