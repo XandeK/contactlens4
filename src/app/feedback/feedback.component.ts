@@ -15,7 +15,25 @@ export class FeedbackComponent implements OnInit {
       console.log(this.reviewList);
     });
   }
+
   ngOnInit() {
+
+  }
+
+  approve(id: string) {
+    this.CategoryService.approveRejectReviews(id, true).subscribe((results: any) => {
+      if (results.result === 'OK') {
+        window.location.reload();
+      }
+    });
+  }
+
+  reject(id: string) {
+    this.CategoryService.approveRejectReviews(id, false).subscribe((results: any) => {
+      if (results.result === 'OK') {
+        window.location.reload();
+      }
+    });
   }
 
 }

@@ -22,4 +22,43 @@ export class CategoryService {
   getAllReviews() {
     return this.http.get<any[]>('/api/getAllReviews');
   }
+
+  addNewCategory(name: string) {
+    return this.http.post('/api/addNewCategory', {
+      categoryName: name
+    });
+  }
+
+  updateCategory(id: string, newName: string) {
+    return this.http.post('/api/updateCategoryName', {
+      id: id,
+      newCategoryName: newName
+    });
+  }
+
+  deleteCategory(id: string) {
+    return this.http.post('/api/deleteCategory', {
+      id: id
+    });
+  }
+
+  addNewProduct(object: object) {
+    return this.http.post('/api/addNewProduct', {
+
+    });
+  }
+
+  updateOrderStatus(id: string, status: string) {
+    return this.http.post('/api/updateOrderStatus', {
+      id: id,
+      status: status
+    });
+  }
+
+  approveRejectReviews(id: string, type: boolean) {
+    return this.http.post('/api/approveRejectReviews', {
+      id: id,
+      type: type
+    });
+  }
 }

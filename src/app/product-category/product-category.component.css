@@ -3,10 +3,14 @@ h2 {
 }
 
 .mainBtn{
-    margin-left: 8%;
+    margin-right: 3%;
 }
 
 .viewBtn{
+    margin-right: 3%;
+}
+
+.delBtn {
     margin-right: 3%;
 }
 
